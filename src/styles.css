@@ -1,6 +1,34 @@
 fieldset#search{
     background: #f1f1f1;
     border: 0 none;
-    width: 110.25%;
+    width: 100%;
     border-bottom: 1px solid #ccc;
 }
+.inline {
+display:flex;
+}
+.left{
+    display:flex;
+    float: left;
+    margin-right: 133px;
+}
+.right{
+    display:flex;
+   float: left;
+}
+
+#search #buttonBar .firstRight{
+	width:auto;
+	float:right;
+	margin-left:2px;
+	text-align:left;
+}
+
+#search #buttonBar .nextRight {
+	width:auto;
+	margin-right:20px;
+	float:right;
+	text-align:left;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
