@@ -1,9 +1,9 @@
-<div name="searchFlight" id="searchFlight">
+<div [formGroup]="searchFlightForm" name="searchFlight" id="searchFlight">
     <fieldset id="search">
         <div class="inline">
             <mat-form-field>
                 <mat-label>Company</mat-label>
-                <mat-select>
+                <mat-select formControlName="company">
                     <mat-option></mat-option>
                     <mat-option>AIR fRANCE</mat-option>
                     <mat-option>AIR EMIRATE</mat-option>
@@ -14,7 +14,7 @@
             <div class="left">
                 <mat-form-field class="left">
                     <mat-label>Trip</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="travelType">
                         <mat-option></mat-option>
                         <mat-option>One-way ticket</mat-option>
                         <mat-option>Round trip</mat-option>
@@ -22,7 +22,7 @@
                 </mat-form-field>
                 <mat-form-field class="right">
                     <mat-label>Flight Type</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="flightType" >
                         <mat-option></mat-option>
                         <mat-option>Direct Flight</mat-option>
                         <mat-option>Connecting Flight</mat-option>
@@ -33,21 +33,21 @@
 
             <div class="right">
                 <mat-form-field>
-                    <input matInput placeholder="Aircraft type">
+                    <input matInput placeholder="Aircraft type" formControlName="aircraftType">
                 </mat-form-field>
             </div>
         </div>
         <div class="inline">
             <div class="left">
                 <mat-form-field>
-                    <input matInput placeholder="Departing From">
+                    <input matInput placeholder="Departing From" formControlName="departureLocation">
                 </mat-form-field>
                 <mat-icon>flight_takeoff</mat-icon>
             </div>
             <div class="right">
                 <mat-icon>flight_land</mat-icon>
                 <mat-form-field>
-                    <input matInput placeholder="Arriving At">
+                    <input matInput placeholder="Arriving At" formControlName="arrivalLocation">
                 </mat-form-field>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 <div class="left">
                     <mat-form-field>
                         <mat-label>Departing date min</mat-label>
-                        <input matInput [matDatepicker]="deparMin">
+                        <input matInput [matDatepicker]="deparMin" formControlName="departureDateMin">
                         <mat-datepicker-toggle matSuffix [for]="deparMin"></mat-datepicker-toggle>
                         <mat-datepicker #deparMin></mat-datepicker>
                     </mat-form-field>
@@ -65,7 +65,7 @@
                 <div class="right">
                     <mat-form-field>
                         <mat-label>Departing date max</mat-label>
-                        <input matInput [matDatepicker]="deparMax">
+                        <input matInput [matDatepicker]="deparMax" formControlName="departureDateMax">
                         <mat-datepicker-toggle matSuffix [for]="deparMax"></mat-datepicker-toggle>
                         <mat-datepicker #deparMax></mat-datepicker>
                     </mat-form-field>
@@ -246,7 +246,7 @@
                 </button>
             </p>
             <p class="nextRight">
-                <button mat-raised-button>Cancel</button>
+                <button mat-raised-button (click)="resetForm(searchFlightForm)">Cancel</button>
             </p>
         </div>
     </fieldset>

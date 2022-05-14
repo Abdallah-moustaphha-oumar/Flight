@@ -8,6 +8,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { MatButtonModule } from "@angular/material/button";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +27,9 @@ import { MatButtonModule } from "@angular/material/button";
     MatDatepickerModule,
     MatNativeDateModule,
     NgxMaterialTimepickerModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     SearchFormComponent
