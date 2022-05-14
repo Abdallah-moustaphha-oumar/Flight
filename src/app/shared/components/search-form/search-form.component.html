@@ -5,8 +5,8 @@
                 <mat-label>Company</mat-label>
                 <mat-select formControlName="company">
                     <mat-option></mat-option>
-                    <mat-option>AIR fRANCE</mat-option>
-                    <mat-option>AIR EMIRATE</mat-option>
+                    <mat-option value="AIR fRANCE">AIR fRANCE</mat-option>
+                    <mat-option value="AIR EMIRATE">AIR EMIRATE</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
@@ -16,16 +16,16 @@
                     <mat-label>Trip</mat-label>
                     <mat-select formControlName="travelType">
                         <mat-option></mat-option>
-                        <mat-option>One-way ticket</mat-option>
-                        <mat-option>Round trip</mat-option>
+                        <mat-option value="One-way ticket">One-way ticket</mat-option>
+                        <mat-option value="Round tri">Round trip</mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field class="right">
                     <mat-label>Flight Type</mat-label>
                     <mat-select formControlName="flightType" >
                         <mat-option></mat-option>
-                        <mat-option>Direct Flight</mat-option>
-                        <mat-option>Connecting Flight</mat-option>
+                        <mat-option value="Direct Flight">Direct Flight</mat-option>
+                        <mat-option value="Connecting Flight">Connecting Flight</mat-option>
 
                     </mat-select>
                 </mat-form-field>
@@ -241,7 +241,7 @@
         </div>
         <div id="buttonBar">
             <p class="firstRight">
-                <button mat-raised-button color="primary">
+                <button mat-raised-button color="primary" (click)="searchFlight()">
                     <mat-icon>search</mat-icon> Find a flight
                 </button>
             </p>

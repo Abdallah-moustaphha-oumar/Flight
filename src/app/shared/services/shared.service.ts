@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
 
-@Component({
-  selector: 'app-search-form',
-  templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class SearchFormComponent implements OnInit {
-  searchFlightForm: FormGroup;
+export class SharedService {
+  _searchCriteresForm:FormGroup;
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.searchFlightForm=new FormGroup({
+  createSearchForm(){
+    this._searchCriteresForm=new FormGroup({
       company:new FormControl(''),
       backDateMin:new FormControl(''),
       flightType:new FormControl(''),
@@ -38,12 +36,6 @@ export class SearchFormComponent implements OnInit {
       fareMin:new FormControl(''),
       fareMax:new FormControl(''),
 
-
     });
   }
-
-  resetForm(form:FormGroup){
-    form.reset();
-  }
-
 }
