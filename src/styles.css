@@ -31,6 +31,50 @@ display:flex;
 	text-align:left;
 }
 
+#mainMargin {
+	margin-left:125px;
+}
+
+#main{
+	width: 100%;
+    float: left;
+    text-align: left;
+    margin-left: -97px;
+}
+
+.menu {
+    overflow: hidden;
+    background: #3f51b5;
+    font-size: 16px;
+    max-width: 167px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: -38px;
+}
+
+.menu a:hover {
+    background: #336EFF;
+}
+
+.leftIcon{
+    margin-right: 9px;
+}
+
+#mainContainer {
+    float: left;
+    margin: 0;
+    width: 100%;
+    display: flex;
+}
+
+.menu a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    padding-left: 15px;
+}
+
 table {
     width: 100%;
 }

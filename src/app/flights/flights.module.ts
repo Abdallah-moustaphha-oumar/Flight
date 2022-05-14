@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlightsComponent } from './flights.component';
+import { FlightsComponent } from '../flights/pages/flights/flights.component';
 import { FlightsListComponent } from './components/flights-list/flights-list.component';
 import { MatTableModule  } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import {MatPaginatorModule} from '@angular/material/paginator'
-import {MatSortModule} from '@angular/material/sort'
+import {MatSortModule} from '@angular/material/sort';
+import { FlightPageComponent } from './pages/flights/flight-page/flight-page.component'
+import { SharedModule } from '../shared/shared.module';
+import { PortalModule } from '../portal/portal.module';
 
 
 
@@ -15,14 +18,17 @@ import {MatSortModule} from '@angular/material/sort'
 @NgModule({
   declarations: [
     FlightsComponent,
-    FlightsListComponent
+    FlightsListComponent,
+    FlightPageComponent
   ],
   imports: [
     CommonModule,
     MatTableModule,
     MatCheckboxModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    SharedModule,
+    PortalModule,
   ],
   exports: [
     FlightsListComponent
