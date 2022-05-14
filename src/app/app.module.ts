@@ -4,6 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlightsModule } from './flights/flights.module';
+import { LangService } from './shared/lang/services/lang.service';
+import { CustomTranslateLoader } from './shared/lang/custom-translate-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,9 +19,22 @@ import { FlightsModule } from './flights/flights.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlightsModule
+    FlightsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: TranslateLoaderFactory,
+        deps: [LangService]
+      }
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function TranslateLoaderFactory(langservice:LangService):CustomTranslateLoader{
+  return new CustomTranslateLoader(langservice)
+
+}

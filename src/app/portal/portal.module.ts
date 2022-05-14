@@ -4,6 +4,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { LeftSideComponent } from './left-side/left-side.component';
 import { BotSideComponent } from './bot-side/bot-side.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -15,7 +17,9 @@ import { MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     CommonModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   exports:[
     LeftSideComponent,
