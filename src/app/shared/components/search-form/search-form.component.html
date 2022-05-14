@@ -14,7 +14,7 @@
             <div class="left">
                 <mat-form-field class="left">
                     <mat-label>Trip</mat-label>
-                    <mat-select formControlName="travelType">
+                    <mat-select formControlName="travelType" (selectionChange)="selectedTripType($event.value)">
                         <mat-option></mat-option>
                         <mat-option value="One-way ticket">One-way ticket</mat-option>
                         <mat-option value="Round tri">Round trip</mat-option>
@@ -22,7 +22,7 @@
                 </mat-form-field>
                 <mat-form-field class="right">
                     <mat-label>Flight Type</mat-label>
-                    <mat-select formControlName="flightType" >
+                    <mat-select formControlName="flightType" (selectionChange)="selectedFlightType($event.value)">
                         <mat-option></mat-option>
                         <mat-option value="Direct Flight">Direct Flight</mat-option>
                         <mat-option value="Connecting Flight">Connecting Flight</mat-option>
@@ -175,7 +175,7 @@
                 </div>
             </div>
         </div>
-        <div class="inline">
+        <div class="inline" [ngStyle]="{display:showback?'flex':'none'}">
             <div class="left">
 
                 <div class="left">
@@ -219,7 +219,7 @@
             </div>
 
         </div>
-        <div class="inline">
+        <div class="inline" [ngStyle]="{display:showConnection?'flex':'none'}">
             <div class="left">
                 <mat-form-field>
                     <mat-label>Connection duration min</mat-label>
