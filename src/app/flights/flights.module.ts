@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlightsComponent } from './flights.component';
-import { FlightComponent } from '../components/flight/flight.component';
+import { FlightsListComponent } from './components/flights-list/flights-list.component';
+import { MatTableModule  } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatPaginatorModule} from '@angular/material/paginator'
+import {MatSortModule} from '@angular/material/sort'
+
+
+
 
 
 
 @NgModule({
   declarations: [
     FlightsComponent,
-    FlightComponent
+    FlightsListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
-    FlightComponent
+    FlightsListComponent
   ],
   providers:[]
 })
