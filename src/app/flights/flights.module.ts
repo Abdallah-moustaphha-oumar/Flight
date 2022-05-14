@@ -9,6 +9,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { FlightPageComponent } from './pages/flights/flight-page/flight-page.component'
 import { SharedModule } from '../shared/shared.module';
 import { PortalModule } from '../portal/portal.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -29,6 +30,7 @@ import { PortalModule } from '../portal/portal.module';
     MatSortModule,
     SharedModule,
     PortalModule,
+    MatIconModule
   ],
   exports: [
     FlightsListComponent

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flight-page.component.css']
 })
 export class FlightPageComponent implements OnInit {
+  isHidden=false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  hideSearchForm(){
+    this.isHidden=!this.isHidden
   }
 
 }

@@ -1,7 +1,7 @@
 fieldset#search{
     background: #f1f1f1;
     border: 0 none;
-    width: 100%;
+    width: 110.25%;
     border-bottom: 1px solid #ccc;
 }
 .inline {
@@ -56,6 +56,29 @@ display:flex;
     background: #336EFF;
 }
 
+#mainBanner {
+    border-bottom: 2px solid #FFFFFF;
+    color: #FFFFFF;
+	background: #3f51b5;
+	margin:4 px 0 0 2px;
+    padding-top: 2px ;
+    width: 112%;
+    height: 26.59 px;
+}
+
+
+#mainBanner h3{
+    float: left;
+	margin:0;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding-left: 8px ;
+    width: 50%;
+    text-align: left;
+}
+
+
+
 .leftIcon{
     margin-right: 9px;
 }
@@ -73,6 +96,12 @@ display:flex;
     color: #fff;
     padding: 10px;
     padding-left: 15px;
+}
+
+#footer .mat-toolbar span {
+    font-family: Arial,Helvetica,Sans-serif;
+    font-size: 0.65em;
+    margin-top: 10px;
 }
 
 table {
