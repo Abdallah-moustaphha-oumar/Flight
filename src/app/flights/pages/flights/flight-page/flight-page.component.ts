@@ -4,6 +4,7 @@ import { FlightService } from 'src/app/flights/services/flight.service';
 import { Bookmark } from 'src/app/shared/models/bookmark.model';
 import { Flight } from 'src/app/shared/models/flight.model';
 import { Flightcriteria } from 'src/app/shared/models/flightcriteria.model';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-flight-page',
@@ -18,7 +19,7 @@ export class FlightPageComponent implements OnInit {
   flightsData=new MatTableDataSource<Flight>();
   flightCriteria:Flightcriteria
 
-  constructor(private flightService:FlightService) { }
+  constructor(private flightService:FlightService,private readonly sharedService: SharedService) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +40,7 @@ export class FlightPageComponent implements OnInit {
         this.show=false;
         this.isHidden=false;
       }else{
+        this.sharedService.haveResult=true;
         this.show=true;
 
       }

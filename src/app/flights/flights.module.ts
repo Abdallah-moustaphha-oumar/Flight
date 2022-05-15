@@ -17,6 +17,8 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
+import { BookmarkslistComponent } from './pages/bookmarks/bookmarkslist/bookmarkslist.component';
 
 
 
@@ -27,7 +29,9 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     FlightsComponent,
     FlightsListComponent,
-    FlightPageComponent
+    FlightPageComponent,
+    BookmarksComponent,
+    BookmarkslistComponent
   ],
   imports: [
     CommonModule,

@@ -6,6 +6,8 @@ import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
 })
 export class SharedService {
   _searchCriteresForm:FormGroup;
+  haveResult =false;
+  creationDone =false;
 
   constructor() { }
 

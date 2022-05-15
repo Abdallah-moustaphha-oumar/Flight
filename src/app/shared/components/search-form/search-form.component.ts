@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { FlightService } from 'src/app/flights/services/flight.service';
 import { Flightcriteria } from '../../models/flightcriteria.model';
 import { SharedService } from '../../services/shared.service';
 
@@ -16,11 +17,23 @@ export class SearchFormComponent implements OnInit {
   //flightType: string;
   @Output() onsearch=new EventEmitter<Flightcriteria>();
 
-  constructor(private readonly sharedservice:SharedService) { }
+  constructor(private readonly sharedservice:SharedService,private readonly flightsService: FlightService) { }
 
   ngOnInit(): void {
+    if (this.sharedservice.creationDone === false) {
+      this.sharedservice.createSearchForm
+      this.sharedservice.creationDone = true;
+      this.sharedservice.creationDone=true;
+    }
     this.sharedservice.createSearchForm();
     this.searchFlightForm=this.sharedservice._searchCriteresForm;
+    if (this.sharedservice.haveResult) {
+      this.searchFlight();
+    }
+    if (this.flightsService.flightCriteria) {
+      this.onsearch.emit(this.flightsService.flightCriteria);
+      this.flightsService.flightCriteria = null;
+    }
   }
 
   resetForm(form:FormGroup){

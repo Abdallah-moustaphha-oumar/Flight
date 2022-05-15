@@ -15,13 +15,14 @@
             </div>
             <div [ngStyle]="{'display':isHidden? 'none':'inherit'}">
                 <app-search-form (onsearch)="searchFlights($event)"></app-search-form>
-            </div >
+            </div>
             <div *ngIf="loading" id="loader">
-            <mat-spinner></mat-spinner>
-        </div>
+                <mat-spinner></mat-spinner>
+            </div>
             <div *ngIf="show">
-            <app-flights-list *ngIf="!loading" [flights]="flightsData" (bookmarkTitle)="addBookmark($event)"></app-flights-list>
-        </div>
+                <app-flights-list *ngIf="!loading" [flights]="flightsData" (bookmarkTitle)="addBookmark($event)">
+                </app-flights-list>
+            </div>
         </div>
     </div>
 </div>
