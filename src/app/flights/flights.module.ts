@@ -12,6 +12,8 @@ import { PortalModule } from '../portal/portal.module';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 
@@ -34,7 +36,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
     PortalModule,
     MatIconModule,
     TranslateModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatTableExporterModule
   ],
   exports: [
     FlightsListComponent

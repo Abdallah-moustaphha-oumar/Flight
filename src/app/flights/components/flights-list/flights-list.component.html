@@ -1,6 +1,6 @@
 <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 <div class="mat-elevation-z8" id="flights">
-<table mat-table [dataSource]="flights" matSort>
+<table mat-table matTableExporter [dataSource]="flights" matSort #exporter="matTableExporter">
     <!-- idFlight Column -->
     <ng-container matColumnDef="idFlight">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
@@ -94,11 +94,36 @@
       <ng-container matColumnDef="select">
         <th mat-header-cell *matHeaderCellDef> select </th>
         <td mat-cell *matCellDef="let flight">
-          <mat-checkbox></mat-checkbox>
+          <mat-checkbox (change)="$event ? addRow(flight) : null"></mat-checkbox>
         </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+</div>
+<div id="mainBanner">
+  <h3>List Flight Management</h3>
+</div>
+<div id="buttonListBar">
+  <p class="firstLeft">
+    <button mat-raised-button (click)="exporter.exportTable('csv',{fileName: 'Filghts list'})">
+      <mat-icon>insert_drive_file</mat-icon>export
+  </button>
+  </p>
+  <p class="firstRight" [ngStyle]="{display:!displayBackButton?'inherit':'none'}">
+    <button (click)="getSelectedFlight()" mat-raised-button>
+      <mat-icon>select_all</mat-icon>select
+  </button>
+  </p>
+  <p class="firstRight" [ngStyle]="{display:displayBackButton?'inherit':'none'}">
+    <button (click)="backToResultList()" mat-raised-button>
+      <mat-icon>fast_rewind</mat-icon>Retour
+  </button>
+  </p>
+  <p class="nextRight">
+    <button mat-raised-button>
+      <mat-icon>bookmark</mat-icon>bookmark
+  </button>
+  </p>
 </div>

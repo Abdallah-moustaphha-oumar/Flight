@@ -117,6 +117,10 @@ const Element_Data: Flight[] = [
 export class FlightsListComponent implements OnInit {
   @Input()
   flights = new MatTableDataSource<Flight>();
+  selectedflights = new MatTableDataSource<Flight>();
+  flightsTemp = new MatTableDataSource<Flight>();
+  displayBackButton=false
+
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) matsort: MatSort;
@@ -147,8 +151,38 @@ export class FlightsListComponent implements OnInit {
   ngOnInit(): void {
     this.flights.paginator = this.paginator;
     this.flights.sort = this.matsort;
+    this.flightsTemp = this.flights;
    
 
+  }
+
+  getSelectedFlight(){
+    this.selectedflights.paginator=this.paginator;
+    this.flights=this.selectedflights;
+    this.displayBackButton = true;
+
+
+  }
+
+  ifRowExist(row?: Flight):any{
+    for (let i = 0; i < this.selectedflights.data.length; ++i) {
+      if (this.selectedflights.data[i].idFlight === row.idFlight) {
+        this.selectedflights.data.splice(i, 1);
+        return true;
+      }
+    }
+  }
+
+  addRow(row?: Flight){
+    if (!this.ifRowExist(row)) {
+    this.selectedflights.data.push(row);
+    }
+  }
+
+  backToResultList() {
+    this.flightsTemp.paginator = this.paginator;
+    this.flights = this.flightsTemp;
+    this.displayBackButton = false;
   }
 
 }
