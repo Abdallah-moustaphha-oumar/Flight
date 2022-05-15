@@ -14,9 +14,9 @@
 
             </div>
             <div [ngStyle]="{'display':isHidden? 'none':'inherit'}">
-                <app-search-form></app-search-form>
+                <app-search-form (onsearch)="searchFlights($event)"></app-search-form>
             </div>
-            <app-flights-list></app-flights-list>
+            <app-flights-list [flights]="flightsData"></app-flights-list>
         </div>
     </div>
 </div>

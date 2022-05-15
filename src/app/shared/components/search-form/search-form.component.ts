@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Flightcriteria } from '../../models/flightcriteria.model';
 import { SharedService } from '../../services/shared.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class SearchFormComponent implements OnInit {
   showback=true;
   //company: string;
   //flightType: string;
+  @Output() onsearch=new EventEmitter<Flightcriteria>();
 
   constructor(private readonly sharedservice:SharedService) { }
 
@@ -44,7 +46,8 @@ export class SearchFormComponent implements OnInit {
   }
 
   searchFlight(){
-    const searchFlightValues=this.searchFlightForm;
-    console.log(searchFlightValues)
+    const searchFlightValues=this.searchFlightForm.value;
+    this.onsearch.emit(searchFlightValues);
+
   }
 }

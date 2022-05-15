@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -115,8 +115,13 @@ const Element_Data: Flight[] = [
   styleUrls: ['./flights-list.component.css']
 })
 export class FlightsListComponent implements OnInit {
+  @Input()
+  flights = new MatTableDataSource<Flight>();
+
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) matsort: MatSort;
+  
+
 
   
   displayedColumns:string[]=[
@@ -136,16 +141,13 @@ export class FlightsListComponent implements OnInit {
     'connectionDuration',
     'aircraftType',
     'select'];
-  flights = new MatTableDataSource<Flight>();
 
   constructor( private FlighService:FlightService) { }
 
   ngOnInit(): void {
     this.flights.paginator = this.paginator;
     this.flights.sort = this.matsort;
-    this.FlighService.getFlightList().subscribe(data=>{
-      this.flights.data=data;
-    })
+   
 
   }
 
