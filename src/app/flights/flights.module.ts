@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PortalModule } from '../portal/portal.module';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 
 
@@ -32,7 +33,8 @@ import { TranslateModule } from '@ngx-translate/core';
     SharedModule,
     PortalModule,
     MatIconModule,
-    TranslateModule
+    TranslateModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     FlightsListComponent

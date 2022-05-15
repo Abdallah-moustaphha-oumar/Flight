@@ -47,6 +47,15 @@ export class SearchFormComponent implements OnInit {
 
   searchFlight(){
     const searchFlightValues=this.searchFlightForm.value;
+    if(searchFlightValues.flightType===undefined || searchFlightValues.flightType===''){
+      searchFlightValues.flightType=null;
+    }
+    if(searchFlightValues.company===undefined || searchFlightValues.company===''){
+      searchFlightValues.company=null;
+    }
+    if(searchFlightValues.travelType===undefined || searchFlightValues.travelType===''){
+      searchFlightValues.travelType=null;
+    }
     this.onsearch.emit(searchFlightValues);
 
   }

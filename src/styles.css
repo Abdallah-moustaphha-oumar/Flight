@@ -106,6 +106,15 @@ display:flex;
 .mat-elevation-z8{
     box-shadow: unset;
 }
+#loader{
+    text-align: center;
+}
+
+.mat-spinner{
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
 
 table {
     width: 100%;
