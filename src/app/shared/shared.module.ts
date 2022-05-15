@@ -10,6 +10,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { MatButtonModule } from "@angular/material/button";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { I18nDatePipe } from './util/pipes/i18n-date.pipe';
 
 
 
@@ -18,7 +19,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
-    SearchFormComponent
+    SearchFormComponent,
+    I18nDatePipe
   ],
   imports: [
     CommonModule,
