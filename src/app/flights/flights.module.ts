@@ -14,6 +14,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -38,7 +41,11 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     TranslateModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatTableExporterModule
+    MatTableExporterModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   exports: [
     FlightsListComponent

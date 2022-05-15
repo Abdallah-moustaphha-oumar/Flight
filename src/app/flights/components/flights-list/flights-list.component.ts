@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -120,6 +121,8 @@ export class FlightsListComponent implements OnInit {
   selectedflights = new MatTableDataSource<Flight>();
   flightsTemp = new MatTableDataSource<Flight>();
   displayBackButton=false
+  title:string;
+  @Output() bookmarkTitle = new EventEmitter<string>();
 
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -146,7 +149,7 @@ export class FlightsListComponent implements OnInit {
     'aircraftType',
     'select'];
 
-  constructor( private FlighService:FlightService) { }
+  constructor( private FlighService:FlightService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.flights.paginator = this.paginator;
@@ -183,6 +186,14 @@ export class FlightsListComponent implements OnInit {
     this.flightsTemp.paginator = this.paginator;
     this.flights = this.flightsTemp;
     this.displayBackButton = false;
+  }
+
+  openDialogWithRef(ref: TemplateRef<any>) {
+    this.dialog.open(ref);
+  }
+
+  addBookmark() {
+    this.bookmarkTitle.emit(this.title);
   }
 
 }

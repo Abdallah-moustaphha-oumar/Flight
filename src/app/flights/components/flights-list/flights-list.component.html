@@ -122,8 +122,21 @@
   </button>
   </p>
   <p class="nextRight">
-    <button mat-raised-button>
+    <button mat-raised-button (click)="openDialogWithRef(bookmark)">
       <mat-icon>bookmark</mat-icon>bookmark
   </button>
   </p>
 </div>
+<ng-template #bookmark>
+  <h2 matDialogTitle>Add BookMark</h2>
+  bookmark
+  <mat-form-field hintLabel="3 to 50 characters">
+    <input matInput #input minlength="3" maxlength="50" [(ngModel)]="title"
+      id="bookmarkTitle" type="text" name="bookmarkTitle" placeholder="title" />
+      <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+  </mat-form-field>
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose class="btnDialog" (click)="addBookmark()">Add</button>
+    <button mat-button matDialogClose class="btnDialog">Cancel</button>
+  </mat-dialog-actions>
+</ng-template>

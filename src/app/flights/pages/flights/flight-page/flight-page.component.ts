@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { FlightService } from 'src/app/flights/services/flight.service';
+import { Bookmark } from 'src/app/shared/models/bookmark.model';
 import { Flight } from 'src/app/shared/models/flight.model';
 import { Flightcriteria } from 'src/app/shared/models/flightcriteria.model';
 
@@ -15,6 +16,7 @@ export class FlightPageComponent implements OnInit {
   nb:number;
   isHidden=false;
   flightsData=new MatTableDataSource<Flight>();
+  flightCriteria:Flightcriteria
 
   constructor(private flightService:FlightService) { }
 
@@ -26,6 +28,7 @@ export class FlightPageComponent implements OnInit {
   }
 
   searchFlights(f:Flightcriteria){
+    this.flightCriteria=f
     this.isHidden=true;
     this,this.loading=true;
     this.flightService.searchFlights(f).subscribe(data=>{
@@ -41,6 +44,16 @@ export class FlightPageComponent implements OnInit {
       }
     })
 
+  }
+
+  addBookmark(title: string) {
+    const bookmark: Bookmark = new Bookmark();
+    bookmark.title = title;
+    bookmark.addingDate = new Date();
+    bookmark.flightCriteria = this.flightCriteria;
+    this.flightService.addBookmark(bookmark).subscribe(data=>{
+      console.log(data)
+    });
   }
 
 }

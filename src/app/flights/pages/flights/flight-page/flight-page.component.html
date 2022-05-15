@@ -20,7 +20,7 @@
             <mat-spinner></mat-spinner>
         </div>
             <div *ngIf="show">
-            <app-flights-list *ngIf="!loading" [flights]="flightsData"></app-flights-list>
+            <app-flights-list *ngIf="!loading" [flights]="flightsData" (bookmarkTitle)="addBookmark($event)"></app-flights-list>
         </div>
         </div>
     </div>
