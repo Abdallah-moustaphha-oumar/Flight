@@ -11,6 +11,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { I18nDatePipe } from './util/pipes/i18n-date.pipe';
+import { ReplaceNullValuePipe } from './util/pipes/replace-null-value.pipe';
 
 
 
@@ -20,7 +21,8 @@ import { I18nDatePipe } from './util/pipes/i18n-date.pipe';
 @NgModule({
   declarations: [
     SearchFormComponent,
-    I18nDatePipe
+    I18nDatePipe,
+    ReplaceNullValuePipe
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,7 @@ import { I18nDatePipe } from './util/pipes/i18n-date.pipe';
     TranslateModule
   ],
   exports: [
-    SearchFormComponent
+    SearchFormComponent,ReplaceNullValuePipe
   ]
 })
 export class SharedModule { }

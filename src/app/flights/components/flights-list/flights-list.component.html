@@ -4,91 +4,91 @@
     <!-- idFlight Column -->
     <ng-container matColumnDef="idFlight">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.idFlight}} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.idFlight | replaceNullValue}} </td>
       </ng-container>
   
       <!-- companyName Column -->
       <ng-container matColumnDef="companyName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
-        <td mat-cell *matCellDef="let flight"> {{ flight.companyName}} </td>
+        <td mat-cell *matCellDef="let flight"> {{ flight.companyName | replaceNullValue}} </td>
       </ng-container>
   
       <!-- flightType Column -->
       <ng-container matColumnDef="flightType" >
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Flight type </th>
-        <td mat-cell *matCellDef="let flight">{{ flight.flightType}} </td>
+        <td mat-cell *matCellDef="let flight">{{ flight.flightType | replaceNullValue}} </td>
       </ng-container>
   
       <!-- travelType Column -->
       <ng-container matColumnDef="travelType">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Trip </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.travelType}} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.travelType | replaceNullValue}} </td>
       </ng-container>
   
       <!-- idFlight Column -->
       <ng-container matColumnDef="departureLocation">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure location </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.departureLocation}} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.departureLocation | replaceNullValue}} </td>
       </ng-container>
   
       <!-- companyName Column -->
       <ng-container matColumnDef="arrivalLocation">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival location </th>
-        <td mat-cell *matCellDef="let flight"> {{ flight.arrivalLocation }} </td>
+        <td mat-cell *matCellDef="let flight"> {{ flight.arrivalLocation | replaceNullValue}} </td>
       </ng-container>
   
       <!-- flightType Column -->
       <ng-container matColumnDef="departureDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure date </th>
-        <td mat-cell *matCellDef="let flight">{{ flight.departureDate }} </td>
+        <td mat-cell *matCellDef="let flight">{{ flight.departureDate | replaceNullValue}} </td>
       </ng-container>
   
       <!-- travelType Column -->
       <ng-container matColumnDef="departureTime">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Departure time </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.departureTime }} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.departureTime | replaceNullValue}} </td>
       </ng-container>
   
       <!-- idFlight Column -->
       <ng-container matColumnDef="arrivalDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival date </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.arrivalDate}} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.arrivalDate | replaceNullValue}} </td>
       </ng-container>
   
       <!-- companyName Column -->
       <ng-container matColumnDef="arrivalTime">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival time </th>
-        <td mat-cell *matCellDef="let flight"> {{ flight.arrivalTime }} </td>
+        <td mat-cell *matCellDef="let flight"> {{ flight.arrivalTime | replaceNullValue}} </td>
       </ng-container>
   
       <!-- flightType Column -->
       <ng-container matColumnDef="backDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Back date </th>
-        <td mat-cell *matCellDef="let flight">{{ flight.backDate }} </td>
+        <td mat-cell *matCellDef="let flight">{{ flight.backDate | replaceNullValue}} </td>
       </ng-container>
   
       <!-- travelType Column -->
       <ng-container matColumnDef="backTime">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Back time </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.backTime }} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.backTime | replaceNullValue}} </td>
       </ng-container>
   
       <!-- companyName Column -->
       <ng-container matColumnDef="flightDuration">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Flight duration </th>
-        <td mat-cell *matCellDef="let flight"> {{ flight.flightDuration }} </td>
+        <td mat-cell *matCellDef="let flight"> {{ flight.flightDuration | replaceNullValue}} </td>
       </ng-container>
   
       <!-- flightType Column -->
       <ng-container matColumnDef="connectionDuration">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Connection duration </th>
-        <td mat-cell *matCellDef="let flight">{{ flight.connectionDuration }} </td>
+        <td mat-cell *matCellDef="let flight">{{ flight.connectionDuration | replaceNullValue}} </td>
       </ng-container>
   
       <!-- travelType Column -->
       <ng-container matColumnDef="aircraftType">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Aircraft type </th>
-        <td mat-cell *matCellDef="let flight"> {{flight.aircraftType }} </td>
+        <td mat-cell *matCellDef="let flight"> {{flight.aircraftType | replaceNullValue}} </td>
       </ng-container>
 
       <ng-container matColumnDef="select">

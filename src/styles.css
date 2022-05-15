@@ -103,6 +103,9 @@ display:flex;
     font-size: 0.65em;
     margin-top: 10px;
 }
+.mat-elevation-z8{
+    box-shadow: unset;
+}
 
 table {
     width: 100%;
