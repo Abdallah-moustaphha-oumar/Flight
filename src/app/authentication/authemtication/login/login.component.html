@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Sign in</mat-card-title>
+    <mat-card-content>
+        <div [formGroup]="loginForm">
+            <p>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="username" formControlName="username">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="password *" formControlName="password">
+                </mat-form-field>
+            </p>
+            <mat-error *ngIf="sub && loginForm.invalid"> please fill in the required fields</mat-error>
+            <br>
+            <div class="buttons">
+                <button type="submit" mat-raised-button color="primary" (click)="login()">Sign in</button>
+                <button mat-button>Cancel</button>
+            </div>
+        </div>
+    </mat-card-content>
+    <div *ngIf="loading" id="loader">
+        <img *ngIf="loading" alt="Return to Home Page" src="./../../../../assets/imgs/ajax-wait.gif">
+    </div>
+</mat-card>

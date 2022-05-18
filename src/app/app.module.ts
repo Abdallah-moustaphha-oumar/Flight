@@ -8,6 +8,8 @@ import { LangService } from './shared/lang/services/lang.service';
 import { CustomTranslateLoader } from './shared/lang/custom-translate-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthenticationModule } from './authentication/authentication.module';
+
 
 
 
@@ -21,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlightsModule,
+    AuthenticationModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

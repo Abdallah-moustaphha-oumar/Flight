@@ -32,7 +32,7 @@ export class FlightService {
   }
 
   getBookmark(idBookmark: number): Observable<Bookmark> {
-    return this.http.get<Bookmark>(`${this.API_URL}/bookmarks/${idBookmark}`);
+    return this.http.get<Bookmark>(this.API_URL+'/bookmarks/'+idBookmark);
   }
 
   viewBookmark(idBookmark: number): void {
@@ -41,5 +41,10 @@ export class FlightService {
       this.router.navigate(['/flights']);
       
     })
+  }
+
+  deleteBookmark(idBookmark: number):any {
+    console.log(idBookmark)
+    this.http.delete<Bookmark>(this.API_URL+'/bookmarks/'+idBookmark);
   }
 }

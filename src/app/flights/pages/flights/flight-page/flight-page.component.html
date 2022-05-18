@@ -17,7 +17,7 @@
                 <app-search-form (onsearch)="searchFlights($event)"></app-search-form>
             </div>
             <div *ngIf="loading" id="loader">
-                <mat-spinner></mat-spinner>
+                <img src="../../../../../assets/imgs/ajax-wait.gif">
             </div>
             <div *ngIf="show">
                 <app-flights-list *ngIf="!loading" [flights]="flightsData" (bookmarkTitle)="addBookmark($event)">

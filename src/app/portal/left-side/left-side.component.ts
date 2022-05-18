@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/authentication/authemtication/services/authentication.service';
 
 @Component({
   selector: 'app-left-side',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LeftSideComponent implements OnInit {
 
-  constructor(private readonly router: Router) { }
+  constructor(private readonly router: Router,private authservice:AuthenticationService) { }
 
   ngOnInit(): void {
   }
@@ -19,5 +20,10 @@ export class LeftSideComponent implements OnInit {
 
   flightspage(){
     this.router.navigate(['/flights'])
+  }
+  logout(){
+    this.authservice.removeTokens();
+    this.router.navigate(['authentification/login'])
+
   }
 }
