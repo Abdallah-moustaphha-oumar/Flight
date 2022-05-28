@@ -6,8 +6,10 @@ import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
 })
 export class SharedService {
   _searchCriteresForm:FormGroup;
+  _synthesisForm: FormGroup;
   haveResult =false;
   creationDone =false;
+  syntheseCreationDone =false;
 
   constructor() { }
 
@@ -37,6 +39,14 @@ export class SharedService {
       aircraftType:new FormControl(''),
       fareMin:new FormControl(''),
       fareMax:new FormControl(''),
+
+    });
+  }
+
+  createSynthesisCriteriaForm() {
+    this._synthesisForm=new FormGroup({
+      departureDateMin:new FormControl(''),
+      departureDateMax:new FormControl('')
 
     });
   }

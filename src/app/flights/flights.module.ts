@@ -15,11 +15,14 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
 import { BookmarkslistComponent } from './pages/bookmarks/bookmarkslist/bookmarkslist.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SynthesisComponent } from './synthesis/synthesis.component';
+import { SynthesisCriteriaComponent } from './synthesis/synthesis-criteria/synthesis-criteria.component';
 
 
 
@@ -33,10 +36,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FlightsListComponent,
     FlightPageComponent,
     BookmarksComponent,
-    BookmarkslistComponent
+    BookmarkslistComponent,
+    SynthesisComponent,
+    SynthesisCriteriaComponent
   ],
   imports: [
     CommonModule,
+    MatDatepickerModule,
     MatTableModule,
     MatCheckboxModule,
     MatSnackBarModule,
