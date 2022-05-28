@@ -34,6 +34,9 @@ export class FlightService {
   getBookmark(idBookmark: number): Observable<Bookmark> {
     return this.http.get<Bookmark>(this.API_URL+'/bookmarks/'+idBookmark);
   }
+  delAllBookmar(){
+    return this.http.delete<Bookmark>(this.API_URL+'/bookmarks')
+  }
 
   viewBookmark(idBookmark: number): void {
     this.getBookmark(idBookmark).subscribe(bookmark => {
@@ -43,8 +46,8 @@ export class FlightService {
     })
   }
 
-  deleteBookmark(idBookmark: number):any {
+  deleteBookmark(idBookmark: number):Observable<any> {
     console.log(idBookmark)
-    this.http.delete<Bookmark>(this.API_URL+'/bookmarks/'+idBookmark);
+    return this.http.delete<Bookmark>(this.API_URL+'/bookmarks/'+idBookmark);
   }
 }

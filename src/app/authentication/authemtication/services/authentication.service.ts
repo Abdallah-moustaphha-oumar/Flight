@@ -24,7 +24,7 @@ export class AuthenticationService {
   }
 
   getJwtToken():string{
-    return localStorage.getItem(this.JWT_TOKEN)
+    return localStorage.getItem(this.JWT_TOKEN);
   }
 
   isLoggedIn(){

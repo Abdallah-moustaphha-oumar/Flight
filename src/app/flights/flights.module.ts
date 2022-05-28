@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks.component';
 import { BookmarkslistComponent } from './pages/bookmarks/bookmarkslist/bookmarkslist.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -37,6 +39,7 @@ import { BookmarkslistComponent } from './pages/bookmarks/bookmarkslist/bookmark
     CommonModule,
     MatTableModule,
     MatCheckboxModule,
+    MatSnackBarModule,
     MatPaginatorModule,
     MatSortModule,
     SharedModule,

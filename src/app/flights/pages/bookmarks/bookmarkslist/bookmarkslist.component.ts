@@ -16,9 +16,10 @@ import { Bookmark } from 'src/app/shared/models/bookmark.model';
     trigger("listAnimation",[
       transition("* => *",[
         query(
-          ":leave",[
+          ":leave",
+          [
             style({tranform: 'translateX(0)', opacity: 1}),
-            animate('1000ms',style({tranform: 'translateX(0)', opacity: 1}))
+            animate('1000ms',style({tranform: 'translateX(100%)', opacity: 0}))
           ],
           {optional : true}
         )
@@ -65,6 +66,14 @@ export class BookmarkslistComponent implements OnInit {
 
     });
     //)
+  }
+
+  DeleteAllBookMark(){
+    this.flightservice.delAllBookmar().subscribe(data=>{
+      const newData=this.bookmarks.data
+      newData.splice(0,this.bookmarks.data.length)
+      this.bookmarks.data=newData
+    });
   }
 
 }

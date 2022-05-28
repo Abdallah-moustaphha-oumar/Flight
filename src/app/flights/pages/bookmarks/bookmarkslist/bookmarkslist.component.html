@@ -55,4 +55,32 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <div align="center" *ngIf="bookmarks.data.length===0">
+        No Bokkmark found!
+    </div>
 </div>
+<div id="mainBanner">
+    <h3>Book Mark List Management</h3>
+</div>
+<div  id="buttonListBar">
+<p class="firstLeft">
+    <button mat-raised-button>
+        <mat-icon>insert_drive_file</mat-icon>export
+    </button>
+</p>
+<p class="firstRight">
+    <button mat-raised-button (click)="openDialogueWithRef(delAll)">
+        <mat-icon>delete_sweep</mat-icon>Delete all
+    </button>
+</p>
+</div>
+
+<ng-template #delAll>
+    <h2 matDialogTitle>Delete all book mark</h2>
+    <mat-icon>help</mat-icon> Voulez vous supprimer la liste!!
+    <mat-dialog-actions align="end">
+      <button mat-button matDialogClose class="btnDialog" (click)="DeleteAllBookMark()">oui</button>
+      <button mat-button matDialogClose class="btnDialog">Non</button>
+    </mat-dialog-actions>
+
+</ng-template>

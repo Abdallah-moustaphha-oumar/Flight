@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { FlightService } from 'src/app/flights/services/flight.service';
 import { Bookmark } from 'src/app/shared/models/bookmark.model';
@@ -18,8 +19,11 @@ export class FlightPageComponent implements OnInit {
   isHidden=false;
   flightsData=new MatTableDataSource<Flight>();
   flightCriteria:Flightcriteria
+  hp:MatSnackBarHorizontalPosition='center'
+  vp:MatSnackBarVerticalPosition='top'
 
-  constructor(private flightService:FlightService,private readonly sharedService: SharedService) { }
+  constructor(private flightService:FlightService,private readonly sharedService: SharedService,
+    private readonly _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -55,6 +59,12 @@ export class FlightPageComponent implements OnInit {
     bookmark.flightCriteria = this.flightCriteria;
     this.flightService.addBookmark(bookmark).subscribe(data=>{
       console.log(data)
+      this._snackBar.open('Book Mark added succesfully',null,
+      {duration:2000,
+      horizontalPosition:this.hp,
+      verticalPosition:this.vp,
+      panelClass:['blu-snackbar']});
+
     });
   }
 

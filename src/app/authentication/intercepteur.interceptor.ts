@@ -14,9 +14,11 @@ export class IntercepteurInterceptor implements HttpInterceptor {
 
   constructor(private readonly authservice:AuthenticationService) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
-    request = this.addToken(request, this.authservice.getJwtToken());
+    if (this.authservice.getJwtToken()) {
+      request = this.addToken(request, this.authservice.getJwtToken());
+    }
     
     return next.handle(request);
   }
@@ -24,7 +26,7 @@ export class IntercepteurInterceptor implements HttpInterceptor {
   addToken(request: HttpRequest<any>,token:string){
     return request.clone({
       setHeaders:{
-        'Authorization': 'Bearer '+token
+        'Authorization': `Bearer ${token}`
       }
     });
 
