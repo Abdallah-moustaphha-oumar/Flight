@@ -6,10 +6,23 @@ import { FormControl, FormGroup, FormGroupName } from '@angular/forms';
 })
 export class SharedService {
   _searchCriteresForm:FormGroup;
+  public get searchCriteresForm(): FormGroup {
+    return this._searchCriteresForm;
+  }
+  public set searchCriteresForm(value: FormGroup) {
+    this._searchCriteresForm = value;
+  }
   _synthesisForm: FormGroup;
+  public get synthesisForm(): FormGroup {
+    return this._synthesisForm;
+  }
+  public set synthesisForm(value: FormGroup) {
+    this._synthesisForm = value;
+  }
   haveResult =false;
   creationDone =false;
   syntheseCreationDone =false;
+ 
 
   constructor() { }
 

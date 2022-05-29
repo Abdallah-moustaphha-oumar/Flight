@@ -17,7 +17,7 @@ export class SynthesisCriteriaComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.sharedservice.syntheseCreationDone === false) {
-      this.sharedservice.createSynthesisCriteriaForm
+      this.sharedservice.createSynthesisCriteriaForm()
       this.sharedservice.syntheseCreationDone=true;
     }
     this.synthesisForm=this.sharedservice._synthesisForm;
@@ -26,6 +26,7 @@ export class SynthesisCriteriaComponent implements OnInit {
   doSynthesis(){
     const synthesisCriteriaValues=this.synthesisForm.value
     this.onSearch.emit(synthesisCriteriaValues)
+    console.log(synthesisCriteriaValues)
     
   }
 

@@ -23,6 +23,9 @@ import { BookmarkslistComponent } from './pages/bookmarks/bookmarkslist/bookmark
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SynthesisComponent } from './synthesis/synthesis.component';
 import { SynthesisCriteriaComponent } from './synthesis/synthesis-criteria/synthesis-criteria.component';
+import { SynthesisFlightsComponent } from './synthesis/synthesis-flights/synthesis-flights.component';
+import { SynthesisCompanyComponent } from './synthesis/synthesis-company/synthesis-company.component';
+
 
 
 
@@ -38,7 +41,9 @@ import { SynthesisCriteriaComponent } from './synthesis/synthesis-criteria/synth
     BookmarksComponent,
     BookmarkslistComponent,
     SynthesisComponent,
-    SynthesisCriteriaComponent
+    SynthesisCriteriaComponent,
+    SynthesisFlightsComponent,
+    SynthesisCompanyComponent
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,7 @@ import { FlightsListComponent } from './flights/components/flights-list/flights-
 import { BookmarksComponent } from './flights/pages/bookmarks/bookmarks.component';
 import { BookmarkslistComponent } from './flights/pages/bookmarks/bookmarkslist/bookmarkslist.component';
 import { FlightPageComponent } from './flights/pages/flights/flight-page/flight-page.component';
+import { SynthesisComponent } from './flights/synthesis/synthesis.component';
 import { SearchFormComponent } from './shared/components/search-form/search-form.component';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'register', component: RegistrationComponent },
     ]
   },
+  {path:'synthesis', component:SynthesisComponent}
 
 ];
 
